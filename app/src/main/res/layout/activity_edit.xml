@@ -49,6 +49,20 @@
             android:text="Pendiente"
             android:textSize="16sp" />
 
+        <Switch
+            android:id="@+id/swLactosaEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lactosa"
+            android:textSize="16sp" />
+
+        <Switch
+            android:id="@+id/swGlutenEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gluten"
+            android:textSize="16sp" />
+
         <!-- Metemos un espacio para empujar los botones hacia abajo -->
         <Space
             android:layout_width="match_parent"

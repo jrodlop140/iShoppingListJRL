@@ -22,6 +22,8 @@ public class AddSystem extends AppCompatActivity {
     private EditText etName;
     private EditText etNote;
     private Switch swState;
+    private Switch swLactosa;
+    private Switch swGluten;
     private Button btnSave;
     private Button btnCancel;
 
@@ -45,6 +47,8 @@ public class AddSystem extends AppCompatActivity {
         etName = findViewById(R.id.etNameAdd);
         etNote = findViewById(R.id.etNoteAdd);
         swState = findViewById(R.id.switchPendienteAdd);
+        swLactosa = findViewById(R.id.switchLactosaAdd);
+        swGluten = findViewById(R.id.switchGlutenAdd);
         btnSave = findViewById(R.id.btnSaveEdit);
         btnCancel = findViewById(R.id.btnCancelEdit);
 
@@ -57,6 +61,8 @@ public class AddSystem extends AppCompatActivity {
                 String name = etName.getText().toString();
                 String note = etNote.getText().toString();
                 boolean state = swState.isChecked();
+                boolean lactosa = swLactosa.isChecked();
+                boolean gluten = swGluten.isChecked();
 
                 // Verificar si el producto ya está en la lista
                 boolean productExists = false;
@@ -73,7 +79,7 @@ public class AddSystem extends AppCompatActivity {
                 } else {
                     // Asignar un nuevo ID
                     int newId = Database.productList.size() + 1;
-                    Product newProduct = new Product(newId, name, note, state);
+                    Product newProduct = new Product(newId, name, note, state, lactosa, gluten);
 
                     // Añadir el producto a la lista
                     Database.productList.add(newProduct);

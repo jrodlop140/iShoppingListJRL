@@ -6,8 +6,10 @@ import static com.example.ishoppinglistjrl.database.Database.productList;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnAdd;
     private Button btnPending;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         lvProducts = findViewById(R.id.lvProducts);
         btnAdd = findViewById(R.id.btnAdd);
         btnPending = findViewById(R.id.btnPending);
+
 
         //Inicializamos la lista
         initializeList();
@@ -59,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Añadimos el producto al intent
             detailIntent.putExtra("product", p);
+
 
             //Iniciamos el intent
             startActivity(detailIntent);

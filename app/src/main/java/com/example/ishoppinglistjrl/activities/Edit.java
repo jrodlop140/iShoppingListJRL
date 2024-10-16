@@ -15,7 +15,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.ishoppinglistjrl.R;
-import com.example.ishoppinglistjrl.activities.MainActivity;
 import com.example.ishoppinglistjrl.database.Database;
 import com.example.ishoppinglistjrl.models.Product;
 
@@ -24,6 +23,8 @@ public class Edit extends AppCompatActivity {
     private EditText etName;
     private EditText etNote;
     private Switch swPending;
+    private Switch swLactosa;
+    private Switch swGluten;
     private Button btnSaveEdit;
     private Button btnCancelEdit;
     private int productId;  // Almacenamos el ID del producto que estamos editando
@@ -43,6 +44,8 @@ public class Edit extends AppCompatActivity {
         etName = findViewById(R.id.etName);
         etNote = findViewById(R.id.etNote);
         swPending = findViewById(R.id.switchPendingEdit);
+        swLactosa = findViewById(R.id.swLactosaEdit);
+        swGluten = findViewById(R.id.swGlutenEdit);
         btnSaveEdit = findViewById(R.id.btnSaveEdit);
         btnCancelEdit = findViewById(R.id.btnCancelEdit);
 
@@ -57,6 +60,8 @@ public class Edit extends AppCompatActivity {
             etName.setText(currentProduct.getName());
             etNote.setText(currentProduct.getNote());
             swPending.setChecked(currentProduct.isState());
+            swLactosa.setChecked(currentProduct.isLactosa());
+            swGluten.setChecked(currentProduct.isGluten());
         } else {
             Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show();
         }
@@ -78,6 +83,8 @@ public class Edit extends AppCompatActivity {
                 currentProduct.setName(etName.getText().toString());
                 currentProduct.setNote(etNote.getText().toString());
                 currentProduct.setState(swPending.isChecked());
+                currentProduct.setLactosa(swLactosa.isChecked());
+                currentProduct.setGluten(swGluten.isChecked());
                 Log.d("Edit", "Producto actualizado: " + currentProduct.toString());
                 Toast.makeText(Edit.this, "Product edited correctly", Toast.LENGTH_SHORT).show();
                 // Regresar a la pantalla principal

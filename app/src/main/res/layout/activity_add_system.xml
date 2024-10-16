@@ -52,6 +52,24 @@
             android:textSize="16sp"
             />
 
+        <Switch
+            android:id="@+id/switchLactosaAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lactosa"
+            android:textColor="@color/text"
+            android:textSize="16sp"
+            />
+
+        <Switch
+            android:id="@+id/switchGlutenAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gluten"
+            android:textColor="@color/text"
+            android:textSize="16sp"
+            />
+
         <!-- Metemos un espacio para empujar los botones hacia abajo -->
         <Space
             android:layout_width="match_parent"

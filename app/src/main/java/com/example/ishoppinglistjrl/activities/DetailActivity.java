@@ -22,6 +22,8 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvName;
     private TextView tvNote;
     private Switch swPending;
+    private Switch swLactosa;
+    private Switch swGluten;
     private Button btnEdit;
     private Button btnCancel;
 
@@ -40,6 +42,8 @@ public class DetailActivity extends AppCompatActivity {
         tvName = findViewById(R.id.tvName);
         tvNote = findViewById(R.id.tvNote);
         swPending = findViewById(R.id.swPending);
+        swLactosa = findViewById(R.id.swLactosa);
+        swGluten = findViewById(R.id.swGluten);
         btnEdit = findViewById(R.id.btnEdit);
         btnCancel = findViewById(R.id.btnCancelDetail);
 
@@ -49,9 +53,12 @@ public class DetailActivity extends AppCompatActivity {
         //Recupero el valor de la clave "product"
         Product product = (Product) intent.getSerializableExtra("product");
 
+
         tvName.setText(product.getName());
         tvNote.setText(product.getNote());
         swPending.setChecked(product.isState());
+        swGluten.setChecked(product.isGluten());
+        swLactosa.setChecked(product.isLactosa());
 
         //Listener que maneja el comportamiento del boton de edit al clicarlo
         btnEdit.setOnClickListener(new View.OnClickListener() {

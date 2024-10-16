@@ -43,11 +43,6 @@ public class AddPending extends AppCompatActivity {
         btnsave = findViewById(R.id.btnSaveEditPending);
         btnCancel = findViewById(R.id.btnCancelEditPending);
 
-        // Inicializar la vista
-        spPending = findViewById(R.id.spinnerPending);
-        btnsave = findViewById(R.id.btnSaveEditPending);
-        btnCancel = findViewById(R.id.btnCancelEditPending);
-
         // Filtrar productos no pendientes
         List<Product> nonPendingProducts = new ArrayList<>();
         for (Product product : Database.productList) {
@@ -57,8 +52,7 @@ public class AddPending extends AppCompatActivity {
         }
 
         // Adaptador para el Spinner
-        ArrayAdapter<Product> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, nonPendingProducts);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<Product> adapter = new ArrayAdapter<>(AddPending.this, android.R.layout.simple_spinner_item, nonPendingProducts);
         spPending.setAdapter(adapter);
 
         // Asiganamos el listener click al boton save
